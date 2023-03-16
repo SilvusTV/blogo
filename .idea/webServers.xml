@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ffad91f7-a41b-49f5-9b6b-060e4d9e0f47" name="silvus.me">
+        <fileTransfer rootFolder="/var/www/web/dev.silvus.me/blogo" accessType="SFTP" host="silvus.me" port="22" sshConfigId="a45b1846-5914-43b3-8225-8067edf164fd" sshConfig="debian@silvus.me:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

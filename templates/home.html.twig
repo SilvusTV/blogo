@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}Home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/assets/css/homePage.css') }}">
+{% endblock %}
+{% block body %}
+    <section class="landing-page">
+        <div class="welcome">
+            <div class="text">
+                <span class="welcome-txt">Bienvenue sur</span>
+                <h1>BLOG-US</h1>
+                <span class="description-txt">
+                Notre blog personnel axé sur la technologie ! Découvrez les dernières tendances, gadgets, logiciels, applications mobiles et bien plus encore. Que vous soyez un professionnel de l'informatique ou un passionné de technologie, vous trouverez des astuces, des conseils et des analyses approfondies ici. Restez à jour sur les dernières nouvelles et tendances technologiques en nous rejoignant.
+                </span>
+            </div>
+            <div class="image">
+                <img src="{{ asset('/assets/img/Logo.png') }}" alt="Blog-us logo">
+            </div>
+        </div>
+        <div class="us block">
+            <div class="text">
+                <h1>L'équipe</h1>
+                <p>Découvrez ici qui compose l'équipe</p>
+            </div>
+            <div class="equipe">
+                <div class="hugo equipe-case">
+                    <p class="name">Hugo</p>
+                    <p class="work">Développer</p>
+                </div>
+                <div class="corentin equipe-case">
+                    <p class="name">Corentin</p>
+                    <p class="work">Designer UX|UI</p>
+                </div>
+                <div class="marc equipe-case">
+                    <p class="name">Marc</p>
+                    <p class="work">Content Manager</p>
+                </div>
+                <div class="valentin equipe-case">
+                    <p class="name">Valentin</p>
+                    <p class="work">Content Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

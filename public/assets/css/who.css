@@ -1,0 +1,22 @@
+.content{
+    margin: 50px 0 50px 0;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 25px;
+}
+.block:nth-child(1){
+    grid-area: 1 / 1 / 2 / 3;
+}
+.block:nth-child(2){
+    grid-area: 2 / 2 / 3 / 4;
+}
+.block:nth-child(3){
+    grid-area: 3 / 1 / 4 / 3;
+}
+.block:nth-child(4){
+    grid-area: 4 / 2 / 5 / 4;
+}

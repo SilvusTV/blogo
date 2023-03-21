@@ -1,0 +1,104 @@
+@import url('root.css');
+.landing-page{
+    min-height: calc(100vh - 35px);
+    width: 70vw;
+}
+.welcome{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh ;
+    align-items: center;
+    width: auto;
+    font-size: 1.2em;
+}
+.welcome .welcome-txt{
+    font-weight: 800;
+    color: var(--secondary-text-color);
+}
+.welcome h1{
+    margin: 15px 0 15px;
+    font-size: 9rem;
+    font-weight: 800;
+    background: rgb(13,168,232);
+    background: linear-gradient(90deg, rgba(13,168,232,1) 0%, rgba(13,200,215,1) 100%);
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.welcome .description-txt{
+    display: flex;
+    position: relative;
+    width: 65%;
+    color: var(--secondary-text-color);
+}
+.us{
+    display: flex;
+    flex-direction:row ;
+    height: 225px;
+    margin-top: 50px;
+}
+.us .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.us .text h1{
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.us .text p{
+
+}
+.us .text{
+    padding: 15px 0 15px 0;
+    width: 17%;
+    margin: 0 1% 0 1%;
+}
+.us .equipe .equipe-case{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 100%;
+    margin: 0 1% 0 1%;
+    justify-content: end;
+}
+.equipe-case .work{
+    color: var(--secondary-text-color);
+}
+.us .equipe{
+    display: flex;
+    gap: 10%;
+    width: 83%;
+    padding: 15px 0 15px 0;
+    margin: 0 1% 0 3%;
+}
+.equipe .hugo{
+    background-image: url(/assets/img/hugo.jpeg);
+}
+.equipe .corentin{
+    background-image: url(/assets/img/corentin.jpeg);
+    color: black;
+}
+.equipe .marc{
+    background-image: url(/assets/img/marc.jpeg);
+    color: black;
+}
+.equipe .valentin{
+    background-image: url(/assets/img/valentin.jpeg);
+    color: black;
+}
+.equipe p:last-child{
+    margin-bottom: 10px ;
+}
+.equipe p:first-child{
+    font-size: 20px;
+    font-weight: 800;
+}
+.equipe p{
+    margin-left: 5px;
+}

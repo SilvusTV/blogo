@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class BlogController extends AbstractController
 {
-    #[Route('/home', name: 'home')]
+    #[Route('/blog', name: 'blog.index')]
     public function index(): Response
     {
-        return $this->render('home.html.twig', [
-            'controller_name' => 'home',
+        return $this->render('blog/index.html.twig', [
+            'current_menu' => 'blog'
         ]);
     }
 }

@@ -1,13 +1,101 @@
 {% extends 'base.html.twig' %}
-{% block title %}Home{% endblock %}
+
+{% block title %}Qui Sommes-nous ?{% endblock %}
+{% block javascripts %}
+    <script src="https://kit.fontawesome.com/cdc2e02d98.js" crossorigin="anonymous"></script>
+{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('/assets/css/who.css') }}">
 {% endblock %}
 {% block body %}
 <section class="content">
-    <div class="hugo block">t</div>
-    <div class="corentin block">e</div>
-    <div class="valentin block">s</div>
-    <div class="marc block">t</div>
+    <div class="hugo fiche left block">
+        <span id="hugo" class="anchor"></span>
+       <div class="img"></div>
+        <div class="text">
+            <span class="name">
+            <h1>COMBE</h1>
+            <h1 class="name">Hugo</h1>
+            <h3>Développeur</h3>
+        </span>
+            <p class="desc-perso desc">Je m'appelle Hugo COMBE et j'ai 19 ans. Ayant obtenu mon baccalauréat général avec une spécialité en mathématiques et physique ainsi qu'une option math-expert, je suis actuellement en première année à l'ESGI. Mes centres d'intérêt sont nombreux et incluent notamment le sport automobile, l'informatique, l'actualité et le journalisme, la photographie et la finance. Bien que je sois dyslexique, dysorthographique et autiste, j'aborde chaque jour avec détermination et persévérance pour évoluer et améliorer mes compétences.</p>
+            <p class="desc-pro desc">Je travaille actuellement chez <a href="https://www.websource.fr/">"Websource"</a>, une agence web, mais je rejoindrai bientôt une entreprise spécialisée dans l'e-learning et la cybersécurité nommée <a href="https://kamae.fr/">"Kamaé"</a>  à partir du 12 avril 2023. Étant donné que je ne peux pas me permettre de ne pas travailler, j'ai eu plusieurs emplois saisonniers tels que travailler dans les champs ou à la banque. En mai 2021, j'ai créé ma propre auto-entreprise où je travaille généralement avec des personnalités du web pour des entretiens logiciels ou des développements spécifiques.</p>
+            <span class="personality">
+                <b>Type de personnalité : </b>
+                <a href="https://www.16personalities.com/fr/la-personnalite-istj">ISTJ</a>
+            </span>
+            <div class="social">
+                <span class="github"><i class="fa-brands fa-square-github"></i> : <a href="https://github.com/SilvusTV">Github</a></span>
+                <span class="LinkedIn"><i class="fa-brands fa-linkedin"></i> : <a href="https://www.linkedin.com/in/hugo-combe-813483210/">Linkedin</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="corentin fiche right block">
+        <span id="corentin" class="anchor"></span>
+        <div class="img"></div>
+        <div class="text">
+            <span class="name">
+            <h1>METTON</h1>
+            <h1 class="name">Corentin</h1>
+            <h3>Designer UX|UI</h3>
+        </span>
+            <p class="desc-perso desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus corporis debitis, dolorum ducimus est fuga hic labore magnam, praesentium quia quis quisquam recusandae tenetur! A aliquid dolorum fugiat labore sunt.</p>
+            <p class="desc-pro desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, assumenda culpa cupiditate impedit magni minus molestias obcaecati? Aperiam architecto culpa doloribus eos magnam maiores, nesciunt non pariatur qui sit!</p>
+            <span class="personality">
+                <b>Type de personnalité : </b>
+                <a href="https://www.16personalities.com/fr/la-personnalite-enfp">ENFP</a>
+            </span>
+            <div class="social">
+                <span class="github"><i class="fa-brands fa-square-github"></i> : <a href="https://github.com/Crtmetton">Github</a></span>
+                <span class="LinkedIn"><i class="fa-brands fa-linkedin"></i> : <a href="https://www.linkedin.com/in/corentin-metton-b5053021a/">Linkedin</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="marc fiche left block">
+        <span id="marc" class="anchor"></span>
+        <div class="img"></div>
+        <div class="text">
+            <span class="name">
+            <h1>TELENA</h1>
+            <h1 class="name">Marc</h1>
+            <h3>Content manager</h3>
+        </span>
+            <p class="desc-perso desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus corporis debitis, dolorum ducimus est fuga hic labore magnam, praesentium quia quis quisquam recusandae tenetur! A aliquid dolorum fugiat labore sunt.</p>
+            <p class="desc-pro desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, assumenda culpa cupiditate impedit magni minus molestias obcaecati? Aperiam architecto culpa doloribus eos magnam maiores, nesciunt non pariatur qui sit!</p>
+            <span class="personality">
+                <b>Type de personnalité : </b>
+                <a href="https://www.16personalities.com/fr/la-personnalite-istj">ISTJ</a>
+            </span>
+            <div class="social">
+                <span class="github"><i class="fa-brands fa-square-github"></i> : <a href="https://github.com/SilvusTV">Github</a></span>
+                <span class="LinkedIn"><i class="fa-brands fa-linkedin"></i> : <a href="https://www.linkedin.com/in/marc-telena-119a02233/">Linkedin</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="valentin fiche right block">
+        <span id="valentin" class="anchor"></span>
+        <div class="img"></div>
+        <div class="text">
+            <span class="name">
+            <h1>ROLLY</h1>
+            <h1 class="name">Valentin</h1>
+            <h3>Content manager</h3>
+        </span>
+            <p class="desc-perso desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus corporis debitis, dolorum ducimus est fuga hic labore magnam, praesentium quia quis quisquam recusandae tenetur! A aliquid dolorum fugiat labore sunt.</p>
+            <p class="desc-pro desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, assumenda culpa cupiditate impedit magni minus molestias obcaecati? Aperiam architecto culpa doloribus eos magnam maiores, nesciunt non pariatur qui sit!</p>
+            <span class="personality">
+                <b>Type de personnalité : </b>
+                <a href="https://www.16personalities.com/fr/la-personnalite-enfp">ENFP</a>
+            </span>
+            <div class="social">
+                <span class="github"><i class="fa-brands fa-square-github"></i> : <a href="https://github.com/Crtmetton">Github</a></span>
+                <span class="LinkedIn"><i class="fa-brands fa-linkedin"></i> : <a href="https://www.linkedin.com/in/valentin-rolly-bb89b7254/">Linkedin</a></span>
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}

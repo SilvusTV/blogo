@@ -12,7 +12,8 @@ class WhoController extends AbstractController
     public function index(): Response
     {
         return $this->render('who/index.html.twig', [
-            'controller_name' => 'WhoController'
+            'controller_name' => 'WhoController',
+            'current_menu' => 'who'
         ]);
     }
 }

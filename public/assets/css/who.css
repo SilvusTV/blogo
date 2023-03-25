@@ -94,10 +94,10 @@
     transform: translate(-3%, -150%);
 }
 .right h1.name{
-    transform: translate(-20%);
+    transform: translate(-7vw);
 }
 .left h1.name{
-    transform: translate(20%);
+    transform: translate(7vw);
 }
 .left .personality{
     margin: 5px 0 0 3%;

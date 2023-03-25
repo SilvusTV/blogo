@@ -1,7 +1,32 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Le blog{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/assets/css/blog/index.css') }}">
+{% endblock %}
 {% block body %}
-    <div class="text-center">
-        <h1>Le Blog</h1>
+    <h1>Le Blog</h1>
+    <div class="text-center content-page">
+        {% for blog in blogs %}
+        <div class="blog_block block">
+            {% if blog.thumbnail != null%}
+                <img src="{{ asset('/assets/img/')}}{{blog.thumbnail}}" alt="{{blog.thumbnail}}" class="img">
+            {% endif %}
+            <h2 class="title"><a href="" class="title">{{ blog.title }}</a></h2>
+            <p class="short-text">{{blog.content| striptags | slice(0, 400) }}...</p>
+            <div class="info">
+                <div class="author">
+                    <img src="{{ asset('/assets/img/')}}{{authorInformations[blog.idauthor].profilpic  }}" alt="{{ authorInformations[blog.idauthor].firstname }}" class="profil-pic">
+                    <div class="name">
+                        <p class="firstname">{{ authorInformations[blog.idauthor].firstname }}</p>
+                        <p class="lastname">{{ authorInformations[blog.idauthor].lastname }}</p>
+                    </div>
+                </div>
+                <div class="publish-date">
+                    <i class="fa-solid fa-clock"></i>
+                    <p class="date">{{ blog.createdat|date('d/m/Y H:m')}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}

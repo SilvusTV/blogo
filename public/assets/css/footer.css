@@ -82,6 +82,7 @@
     background: var(--main-active-dark);
     background: linear-gradient(90deg, var(--main-active-dark) 0%, var(--main-active-light) 100%);
     font-family: Podkova-SB;
+    cursor: pointer
 }
 .navbar-footer{
     display: grid;

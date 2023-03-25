@@ -6,6 +6,7 @@
     padding: 25px 0 0 50px;
     display: flex;
     flex-direction: row;
+    margin-top: 30px;
 }
 .left-part, .midle-part, .right-part{
     width: 33%;

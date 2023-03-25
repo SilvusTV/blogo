@@ -19,6 +19,7 @@ html{
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow-x: hidden;
 }
 body{
     width: 75vw;
@@ -53,4 +54,7 @@ body{
     backdrop-filter: blur(5);
     border-radius: 25px;
     border: solid 1px var(--block-border);
+}
+.content-page{
+    min-height: 61vh;
 }

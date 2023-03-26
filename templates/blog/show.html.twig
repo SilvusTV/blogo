@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Le blog{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/assets/css/blog/show.css') }}">
+{% endblock %}
+{% block body %}
+   {% if blog.thumbnail %}
+    <div class="img"></div>
+    {% endif %}
+    <h1 class="blog-title">{{ blog.title }}</h1>
+    <div class="info">
+        <div class="author">
+            <img src="{{ asset('/assets/img/')}}{{authorInformations[blog.idauthor].profilpic  }}" alt="{{ authorInformations[blog.idauthor].firstname }}" class="profil-pic">
+                <p class="firstname">{{ authorInformations[blog.idauthor].firstname }}</p>
+                <p class="lastname">{{ authorInformations[blog.idauthor].lastname }}</p>
+        </div>
+        <div class="publish-date">
+            <i class="fa-solid fa-clock"></i>
+            <p class="date">{{ blog.createdat|date('d/m/Y H:m')}}</p>
+        </div>
+    </div>
+    <div class="blog-content">
+        {{ blog.content }}
+    </div>
+    <a href="{{ path('blog.index')}}">← Retour</a>
+{% endblock %}

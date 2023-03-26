@@ -11,7 +11,7 @@
             {% if blog.thumbnail != null%}
                 <img src="{{ asset('/assets/img/')}}{{blog.thumbnail}}" alt="{{blog.thumbnail}}" class="img">
             {% endif %}
-            <h2 class="title"><a href="" class="title">{{ blog.title }}</a></h2>
+            <h2 class="title"><a href="{{ path('blog.show', {id: blog.id, slug: blog.slug }) }}" class="title">{{ blog.title }}</a></h2>
             <p class="short-text">{{blog.content| striptags | slice(0, 400) }}...</p>
             <div class="info">
                 <div class="author">

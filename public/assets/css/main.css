@@ -58,3 +58,11 @@ body{
 .content-page{
     min-height: 61vh;
 }
+.button{
+    color: white;
+    background: var(--main-active-dark);
+    background: linear-gradient(90deg, var(--main-active-dark) 0%, var(--main-active-light) 100%);
+    font-size: 1.2rem;
+    padding: 7px;
+    border-radius: 15px;
+}

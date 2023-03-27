@@ -1,0 +1,52 @@
+@import url('../root.css');
+body{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin: 30px 0 30px 0;
+}
+.img{
+    width: 70vw;
+    height: 200px;
+    border-radius: 15px 15px 0 0;
+    margin: 15px 0 0 0;
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+.blog-content{
+    line-height: 22px;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+.author{
+    display: flex;
+    align-items: center;
+}
+.author .firstname{
+    margin: 0 7px 0 7px;
+}
+.author img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 5px 5px 10px 10px;
+}
+
+.info{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.publish-date{
+    display: flex;
+    gap: 3px;
+    margin: 5px 10px 10px 0;
+}
+.back{
+    text-decoration: none;
+    align-self: center;
+    margin-top: 35px;
+}

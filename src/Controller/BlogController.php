@@ -29,17 +29,15 @@ class BlogController extends AbstractController
     public function index(EntityManagerInterface $entityManager): Response
     {
 
-        $blogs = $this->blogRepository->findAll();
+        $blogs = $this->blogRepository->findBy(array(), array('id' => 'DESC'));
         $authors = $this->userRepository->findAll();
 
         $allAuthors = [];
-        foreach ($authors as $author){
+        foreach ($authors as $author) {
             $allAuthors += [
                 $author->getId() => $author
             ];
         }
-
-//            $description = mb_substr($blog->getContent(), 0, 20, 'UTF-8');
 
         return $this->render('blog/index.html.twig', [
             'current_menu' => 'blog',
@@ -47,6 +45,23 @@ class BlogController extends AbstractController
             'authorInformations' => $allAuthors,
         ]);
 
+    }
+    #[Route('/blog/{slug}-{id}', name: 'blog.show', requirements: ['slug' => "[a-z0-9\-]*"])]
+    public function show($slug, $id): Response
+    {
+        $blog = $this->blogRepository->find($id);
+        $authors = $this->userRepository->findAll();
+        $allAuthors = [];
+        foreach ($authors as $author) {
+            $allAuthors += [
+                $author->getId() => $author
+            ];
+        }
+        return $this->render('blog/show.html.twig',[
+            'blog'=> $blog,
+            'current_menu' => 'blog',
+            'authorInformations' => $allAuthors,
+        ]);
     }
 
 }

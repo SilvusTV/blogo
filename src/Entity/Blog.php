@@ -9,6 +9,14 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: BlogRepository::class)]
 class Blog
 {
+    const AUTHOR = [
+        1 => 'Hugo',
+        2 => 'Valentin',
+        3 => 'Corentin',
+        4 => 'Marc',
+        5 => 'Florent'
+    ];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -27,9 +35,9 @@ class Blog
     private ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column]
-    private ?int $first_page = null;
+    private ?int $first_page = 0;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $thumbnail = null;
 
     #[ORM\Column(length: 255)]
@@ -80,6 +88,10 @@ class Blog
 
         return $this;
     }
+    public function getAuthorType():string
+    {
+        return self::AUTHOR[$this->id_author];
+    }
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
@@ -110,7 +122,7 @@ class Blog
         return $this->thumbnail;
     }
 
-    public function setThumbnail(string $thumbnail): self
+    public function setThumbnail(?string $thumbnail): self
     {
         $this->thumbnail = $thumbnail;
 

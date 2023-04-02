@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}Edit | Blog-us{% endblock %}
+{% block title %}Ajouter | Blog-us{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('/assets/css/admin/blog/edit.css') }}">
 {% endblock %}
 {% block body %}
     <div class="content-page">
-        <h1>Editer l'article de blog</h1>
+        <h1>Ajouter l'article de blog</h1>
         {{ form_start(form) }}
         <div class="title input">
             {{ form_row(form.title) }}
@@ -25,10 +25,9 @@
             </div>
         </div>
         <div class="button-box">
-            <button class="button input">Editer <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+            <button class="button input">Ajouter <i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i></button>
             <a href="{{ path('admin.blog.index') }}" class="btn-red input">Annuler <i class="fa-solid fa-xmark" style="color: #ffffff;"></i></a>
         </div>
-
         {{ form_end(form) }}
     </div>
 

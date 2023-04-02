@@ -1,0 +1,43 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+.input label{
+    margin: 15px 0 15px 3px;
+    font-size: 1.2em;
+}
+.input input, .input select{
+    padding: 3px 0 3px 7px;
+    font-size: 1.1em;
+}
+textarea{
+    height: 300px;
+    padding: 3px 0 3px 7px;
+    font-size: 1.1em;
+}
+.other{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: 0 0 15px 0;
+}
+.author{
+    grid-area: 1 / 1 / 2 / 3;
+}
+.thumbnail{
+    grid-area: 1 / 4 / 2 / 7;
+}
+.slug{
+    grid-area: 1 / 8 / 2 / 13;
+}
+button, a.input{
+    margin: 40px 5px 0 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-box{
+    align-self: center;
+}

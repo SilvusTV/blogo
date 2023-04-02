@@ -1,11 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block title %}Gérer le blog{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('/assets/css/blog/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/admin/blog/index.css') }}">
 {% endblock %}
 {% block body %}
     <h1>Gérer les articles de blogs</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alerte alrt-success">
+            <i class="fa-solid fa-check" style="color: #0f172a;"></i>
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
+
     <div class="text-center content-page">
+        <a href="{{ path('admin.blog.new') }}" class="create button">Ajouter un article <i class="fa-solid fa-plus" style="color: #ffffff;"></i></a>
         <table class="blogs-table">
             <thead>
             <tr>
@@ -19,8 +28,13 @@
                 <tr>
                     <td>{{ blog.id }}</td>
                     <td>{{ blog.title }}</td>
-                    <td>
+                    <td class="actions">
                         <a href="{{ path('admin.blog.edit', {id: blog.id}) }}" class="btn-green"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                        <form method="post" action="{{ path('admin.blog.delete', {id: blog.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cet article ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ blog.id) }}">
+                            <button class="btn-red"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}

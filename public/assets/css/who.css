@@ -62,7 +62,9 @@
 .valentin .img {
     background: url(/assets/img/valentin.jpg);
 }
-
+.florent .img {
+    background: url(/assets/img/florent.jpg);
+}
 .right .img {
     -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     border-radius: 0 15px 15px 0;

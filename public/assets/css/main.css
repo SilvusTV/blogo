@@ -66,3 +66,8 @@ body{
     padding: 7px;
     border-radius: 15px;
 }
+.btn-green{
+    padding: 10px;
+    background: limegreen;
+    border-radius: 5px;
+}

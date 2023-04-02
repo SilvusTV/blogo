@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gérer le blog{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/assets/css/blog/index.css') }}">
+{% endblock %}
+{% block body %}
+    <h1>Gérer les articles de blogs</h1>
+    <div class="text-center content-page">
+        <table class="blogs-table">
+            <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for blog in blogs %}
+                <tr>
+                    <td>{{ blog.id }}</td>
+                    <td>{{ blog.title }}</td>
+                    <td>
+                        <a href="{{ path('admin.blog.edit', {id: blog.id}) }}" class="btn-green"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

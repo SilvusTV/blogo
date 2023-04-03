@@ -36,6 +36,7 @@ h1{
     justify-content: center;
 }
 .blog_block h2 a {
+    margin: 0 10px 0 10px;
     color: white;
 }
 .blog_block .info, .author{

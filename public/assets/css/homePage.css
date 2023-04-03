@@ -1,5 +1,4 @@
 .landing-page{
-    min-height: calc(100vh - 35px);
     width: 70vw;
 }
 .welcome{
@@ -106,4 +105,9 @@ a{
 }
 .equipe p{
     margin-left: 5px;
+}
+@media screen and (min-width: 1024px) {
+    .landing-page{
+        margin-bottom: 200px;
+    }
 }

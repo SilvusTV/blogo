@@ -93,13 +93,19 @@
 .left .desc {
     margin: 0 2% 7px 3%;
     text-align: justify;
+    font-size: clamp(0.8rem, 1.2vw, 95%);
 }
 
 .right .desc {
     margin: 0 3% 7px 2%;
     text-align: justify;
+    font-size: clamp(0.8rem, 1.2vw, 95%);
 }
-
+.second-line{
+    display: flex;
+    gap: 2%;
+    align-items: center;
+}
 .fiche h3 {
     font-size: .8rem;
     color: var(--secondary-text-color);
@@ -109,28 +115,20 @@
     font-size: 2rem;
 }
 
-.left h1 {
+.left .name {
     margin-left: 3%;
 }
+.left .second-line{
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.right .second-line{
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
-.right h1 {
+.right .name {
     margin-right: 3%;
-}
-
-.left h3 {
-    transform: translate(3%, -150%);
-}
-
-.right h3 {
-    transform: translate(-3%, -150%);
-}
-
-.right h1.name {
-    transform: translate(-7vw);
-}
-
-.left h1.name {
-    transform: translate(7vw);
 }
 
 .left .personality {
@@ -139,10 +137,6 @@
 
 .right .personality {
     margin: 5px 3% 0 0;
-}
-
-a {
-    color: white;
 }
 
 .social {

@@ -1,6 +1,4 @@
-@import url('root.css');
 .landing-page{
-    min-height: calc(100vh - 35px);
     width: 70vw;
 }
 .welcome{
@@ -18,7 +16,7 @@
 }
 .welcome h1{
     margin: 15px 0 15px;
-    font-size: 9rem;
+    font-size: 8.5vw;
     font-weight: 800;
     background: rgb(13,168,232);
     background: linear-gradient(90deg, rgba(13,168,232,1) 0%, rgba(13,200,215,1) 100%);
@@ -32,19 +30,21 @@
     width: 65%;
     color: var(--secondary-text-color);
 }
+.image img{
+    width: 30vw;
+    height: auto;
+}
 .us{
     display: flex;
-    flex-direction:row ;
-    height: 225px;
+    flex-direction:column ;
     margin-top: 50px;
 }
 .us .text{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 15px 0 15px 0;
-    width: 17%;
-    margin: 0 1% 0 1%;
 }
 .us .text h1{
     font-weight: 800;
@@ -52,14 +52,15 @@
 }
 .us .equipe .equipe-case{
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     border-radius: 15px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 100%;
+    width: 12vw;
+    height: 32vh;
     margin: 0 1% 0 1%;
-    justify-content: end;
+    background-position: center
 }
 .equipe-case .work{
     //color: var(--secondary-text-color);
@@ -67,9 +68,9 @@
 }
 .us .equipe{
     display: flex;
-    width: 83%;
+    gap: 1vw;
     padding: 15px 0 15px 0;
-    margin: 0 1% 0 6%;
+    margin: 0 1% 0 1%;
     justify-content: space-around;
 }
 a{
@@ -104,4 +105,9 @@ a{
 }
 .equipe p{
     margin-left: 5px;
+}
+@media screen and (min-width: 1024px) {
+    .landing-page{
+        margin-bottom: 200px;
+    }
 }

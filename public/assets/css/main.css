@@ -24,6 +24,9 @@ html{
 body{
     width: 75vw;
 }
+a {
+    color: white;
+}
 .navbar {
     z-index: 999;
     gap: 50px;

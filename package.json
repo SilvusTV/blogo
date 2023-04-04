@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ckeditor4": "^4.13.0"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^4.2.0"
+  }
+}

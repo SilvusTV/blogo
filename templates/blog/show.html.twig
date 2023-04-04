@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="blog-content">
-        {{ blog.content | nl2br }}
+        {{ blog.content | raw }}
     </div>
     <a href="{{ path('blog.index')}}" class="button back">← Retour</a>
 {% endblock %}

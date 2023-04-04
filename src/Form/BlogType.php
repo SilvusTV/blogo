@@ -8,6 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+
 
 class BlogType extends AbstractType
 {
@@ -15,7 +17,11 @@ class BlogType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content')
+            ->add('content', CKEditorType::class, [
+                'config' => [
+                    'uiColor' => 'rgba(0,0,0,0)',
+                ],
+            ])
             ->add('id_author', ChoiceType::class, [
                  'choices' => array_flip( Blog::AUTHOR)
             ])

@@ -1,0 +1,31 @@
+.content-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+}
+.input label{
+    margin: 15px 0 15px 3px;
+    font-size: 1.2em;
+}
+.input input{
+    padding: 3px 0 3px 7px;
+    font-size: 1.1em;
+    width: 250px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+button{
+    margin: 10px 25% 0 25%;
+    width: 50%;
+}

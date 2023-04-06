@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/assets/css/login.css') }}">
+{% endblock %}
+{% block body %}
+    {% if error %}
+        <div class="alerte alrt-error">
+            <i class="fa-solid fa-xmark" style="color: #0f172a;"></i>
+            <p>{{ error.messageKey }}</p>
+        </div>
+    {% endif %}
+
+    <div class="content-page">
+        <form action="{{ path('login') }}" method="post" class="input">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="_username">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="_password">
+            </div>
+            <button type="submit" class="button">Se connecter →</button>
+        </form>
+    </div>
+
+
+
+    <style>
+        footer {
+            display: flex;
+        }
+    </style>
+{% endblock %}

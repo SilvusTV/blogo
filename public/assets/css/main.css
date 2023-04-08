@@ -133,16 +133,16 @@ a {
     background: linear-gradient(98.64deg, rgba(215, 13, 13, 0.791667) 42.24%, rgba(215, 13, 13, 0) 79.54%);
 }
 @keyframes appear {
-    0%{
+    0% {
         transform: translateX(100%);
     }
-    5%{
+    5% {
         transform: translateX(0%);
     }
-    95%{
+    95% {
         transform: translateX(0%);
     }
-    100%{
+    100% {
         transform: translateY(-200%);
     }
 }

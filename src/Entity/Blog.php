@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Gedmo\Mapping\Annotation\Slug;
 
 #[ORM\Entity(repositoryClass: BlogRepository::class), Vich\Uploadable()]
 class Blog
@@ -27,7 +28,7 @@ class Blog
 
 
     #[Vich\UploadableField(mapping: 'blog_image',fileNameProperty: 'thumbnail')]
-    private ?File $imageFile;
+    private ?File $imageFile = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -47,7 +48,8 @@ class Blog
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $thumbnail = null;
 
-    #[ORM\Column(length: 255)]
+    #[Slug(fields: ['title'])]
+    #[ORM\Column(type: 'string', length: 255)]
     private ?string $slug = null;
 
     #[ORM\Column]
@@ -56,6 +58,7 @@ class Blog
     public function __construct()
     {
         $this->created_at = new \DateTime();
+        $this->setSlug(null);
     }
 
     public function getId(): ?int
@@ -144,7 +147,7 @@ class Blog
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
 

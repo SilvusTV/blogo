@@ -23,6 +23,7 @@ html{
 }
 body{
     width: 75vw;
+    min-height: 100vh;
 }
 a {
     color: white;
@@ -36,6 +37,13 @@ a {
 .navbar-btn{
     color: white;
     text-decoration: none;
+}
+.logout{
+    position: absolute;
+    text-decoration: none;
+    top: 0px;
+    left: 0px;
+    transform: translate(-100%, -20%);
 }
 .jcontent-center{
     display: flex;
@@ -68,6 +76,8 @@ a {
     font-size: 1.2rem;
     padding: 7px;
     border-radius: 5px;
+    border: none;
+    outline: none;
 }
 .btn-green{
     padding: 7px;
@@ -118,6 +128,9 @@ a {
 }
 .alrt-success{
     background: linear-gradient(135deg, rgba(13, 200, 215, 0.791667) 42.24%, rgba(13, 200, 215, 0) 79.54%);
+}
+.alrt-error{
+    background: linear-gradient(98.64deg, rgba(215, 13, 13, 0.791667) 42.24%, rgba(215, 13, 13, 0) 79.54%);
 }
 @keyframes appear {
     0%{

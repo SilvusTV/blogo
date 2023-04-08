@@ -9,10 +9,10 @@
         {% for blog in blogs %}
         <div class="blog_block block">
             {% if blog.thumbnail != null%}
-                <img src="{{ asset('/assets/img/')}}{{blog.thumbnail}}" alt="{{blog.thumbnail}}" class="img">
+                <img src="{{ asset('/images/blog/')}}{{blog.thumbnail}}" alt="{{blog.thumbnail}}" class="img">
             {% endif %}
             <h2 class="title"><a href="{{ path('blog.show', {id: blog.id, slug: blog.slug }) }}" class="title">{{ blog.title }}</a></h2>
-            <p class="short-text">{{blog.content| striptags | slice(0, 400) }}...</p>
+            <p class="short-text">{{blog.content| striptags | slice(0, 400)| raw }}...</p>
             <div class="info">
                 <div class="author">
                     <img src="{{ asset('/assets/img/')}}{{authorInformations[blog.idauthor].profilpic  }}" alt="{{ authorInformations[blog.idauthor].firstname }}" class="profil-pic">

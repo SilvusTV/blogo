@@ -5,8 +5,12 @@ namespace App\Entity;
 use App\Repository\BlogRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Gedmo\Mapping\Annotation\Slug;
 
-#[ORM\Entity(repositoryClass: BlogRepository::class)]
+#[ORM\Entity(repositoryClass: BlogRepository::class), Vich\Uploadable()]
 class Blog
 {
     const AUTHOR = [
@@ -21,6 +25,10 @@ class Blog
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+
+    #[Vich\UploadableField(mapping: 'blog_image',fileNameProperty: 'thumbnail')]
+    private ?File $imageFile = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -40,12 +48,17 @@ class Blog
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $thumbnail = null;
 
-    #[ORM\Column(length: 255)]
+    #[Slug(fields: ['title'])]
+    #[ORM\Column(type: 'string', length: 255)]
     private ?string $slug = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updated_at = null;
 
     public function __construct()
     {
         $this->created_at = new \DateTime();
+        $this->setSlug(null);
     }
 
     public function getId(): ?int
@@ -134,9 +147,34 @@ class Blog
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(File $imageFile): Blog
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \DateTimeImmutable('now');
+        }
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

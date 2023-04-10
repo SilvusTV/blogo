@@ -25,6 +25,9 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $profil_pic = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class User
     public function setProfilPic(string $profil_pic): self
     {
         $this->profil_pic = $profil_pic;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
